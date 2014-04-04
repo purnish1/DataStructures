@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+	<head>
+		
+		<script type="text/javascript">
+		function a(){
+			try{
+			document.getElementById('div1').innerHTML="some other content";
+			var x=document.getElementsById('div1').innerHTML;
+				throw 'Some exception thrown';
+			}
+			catch(error){
+				alert('in catch');
+			}
+			finally{
+				alert('in finally');
+				document.getElementById('div1').innerHTML="reversing changes";
+			}
+		}
+
+		function b(){
+			window.open('http://www.reddit.com/r/Nootropics/comments/1a7bns/whats_the_deal_with_piracetam/');
+		}
+		</script>
+	</head>
+
+	<body>
+		<div id="div1">
+			inner content here
+
+		</div>
+		<input type="button" onclick="a()"
+				value="Change value">
+		<input type="button"
+		onclick="b()" value="Piracetam">		
+
+	</body>
+
+</html>
