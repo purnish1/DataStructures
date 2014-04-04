@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+
+
+	<head>
+		<script type="text/javascript">
+			function move(){
+				document.getElementById('id1').style.right=(parseInt(document.getElementById('id1').style.right)-10)+'px';
+				if(parseInt(document.getElementById('id1').style.right)<10){
+					document.getElementById('id1').style.top=(parseInt(document.getElementById('id1').style.top)+30)+'px';
+					document.getElementById('id1').style.right='1100px';
+				}
+				if(parseInt(document.getElementById('id1').style.top)>1000){
+					document.getElementById('id1').style.top='100px';
+				}
+				
+				setTimeout(move,20);
+				
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<table>
+		<tr>
+		<td>
+			<div id='id1' class="divclass" style="top:100px; right:1100px; position:absolute">
+				Here is text!
+			</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			<input type="button" onclick="move()" value="move">
+			</td>
+		</tr>
+		</table>	
+	</body>
+</html>
