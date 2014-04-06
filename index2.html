@@ -33,6 +33,15 @@
       if (parseInt(document.getElementById('id2').style.top) > 500) {
         document.getElementById('id2').style.top='100px'
        }
+         document.getElementById('id3').style.top = 
+          parseInt(document.getElementById('id3').style.top)-10+'px';
+     if (parseInt(document.getElementById('id3').style.right) < 10) {
+        document.getElementById('id3').style.right = '350px';
+        
+      }
+      if (parseInt(document.getElementById('id3').style.top) < 10) {
+        document.getElementById('id3').style.top='500px'
+       }
       setTimeout(move, 40);
 
 
@@ -54,6 +63,11 @@
       <td>
         <div id='id2' class="divclass" style="top:200px; right:350px; position:absolute; color:blue; font-size:20px">
           Here is more text!
+        </div>
+      </td>
+      <td>
+        <div id='id3' class="divclass" style="top:150px; right:200px; position:absolute; color:green; font-size:20px">
+          Here is still more text!
         </div>
       </td>
     </tr>
