@@ -3,47 +3,67 @@
 <html>
 
 
-	<head>
-		<div id='div2'>
-		<canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
-		</div>
-		<script type="text/javascript">
-		var c=document.getElementById('myCanvas');
-			var ctx=c.getContext('2d');
-			ctx.fillStyle='#FF0000';
-			ctx.fillRect(0,0,80,100);
-			function move(){
-				document.getElementById('id1').style.right=(parseInt(document.getElementById('id1').style.right)-10)+'px';
-				if(parseInt(document.getElementById('id1').style.right)<10){
-					document.getElementById('id1').style.top=(parseInt(document.getElementById('id1').style.top)+50)+'px';
-					document.getElementById('id1').style.right='1100px';
-				}
-				if(parseInt(document.getElementById('id1').style.top)>500){
-					document.getElementById('id1').style.top='100px';
-				}
-				
-				setTimeout(move,40);
-				
-			}
-		</script>
+<head>
+  <div id='div2'>
+    <canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
+  </div>
+  <script type="text/javascript">
+    var stop='false';
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#FF0000';
+     //ctx.fillRect(0,0,80,100);
+     
+    function move() {
+      document.getElementById('id1').style.right = (parseInt(document.getElementById('id1').style.right) - 10) + 'px';
+      document.getElementById('id2').style.right = (parseInt(document.getElementById('id2').style.right) - 10) + 'px';
+      if (parseInt(document.getElementById('id1').style.right) < 10) {
+        document.getElementById('id1').style.top = (parseInt(document.getElementById('id1').style.top) + 50) + 'px';
+        document.getElementById('id1').style.right = '350px';
+      }
+      if (parseInt(document.getElementById('id1').style.top) > 500) {
+        document.getElementById('id1').style.top = '100px';
+      }
+        document.getElementById('id2').style.top = 
+          parseInt(document.getElementById('id2').style.top)+10+'px';
+     if (parseInt(document.getElementById('id2').style.right) < 10) {
+        document.getElementById('id2').style.right = '350px';
+        
+      }
+      if (parseInt(document.getElementById('id2').style.top) > 500) {
+        document.getElementById('id2').style.top='100px'
+       }
+      setTimeout(move, 40);
 
-	</head>
 
-	<body>
+    }
+    
+  </script>
 
-		<table>
-		<tr>
-		<td>
-			<div id='id1' class="divclass" style="top:100px; right:1100px; position:absolute; color:red; font-size:20px">
-				Here is text!
-			</div>
-			</td>
-			</tr>
-			<tr>
-			<td>
-			<input type="button" onclick="move()" value="move">
-			</td>
-		</tr>
-		</table>	
-	</body>
+</head>
+
+<body style="background:#FFFF55">
+
+  <table>
+    <tr>
+      <td>
+        <div id='id1' class="divclass" style="top:100px; right:350px; position:absolute; color:red; font-size:20px">
+          Here is text!
+        </div>
+      </td>
+      <td>
+        <div id='id2' class="divclass" style="top:200px; right:350px; position:absolute; color:blue; font-size:20px">
+          Here is more text!
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" onclick="move()" value="move">
+        
+      </td>
+    </tr>
+  </table>
+</body>
+
 </html>
